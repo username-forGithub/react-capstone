@@ -23,7 +23,7 @@ The following applications are required to be installed for the project to run!
   - If the app is not opened immediately, then open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## App Deployment
-App deployment is coming soon...
+https://username-forgithub.github.io/react-capstone/
 
 ## Author
 👤 **Bakhtiyor Yusubaliyev**
