@@ -5,14 +5,13 @@ import store from '../redux/configureStore';
 import Listing from '../pages/Listing';
 import '@testing-library/jest-dom/extend-expect';
 
-
 test('Renders Listing correctly', () => {
-  const listing = render(    
-      <Provider store={store}>
-        <Router>
-          <Listing />
-        </Router>
-      </Provider>,
+  const listing = render(
+    <Provider store={store}>
+      <Router>
+        <Listing />
+      </Router>
+    </Provider>,
   );
   expect(listing).toMatchSnapshot();
 });
