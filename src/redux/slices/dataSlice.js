@@ -5,12 +5,13 @@ export const fetchStocks = createAsyncThunk(
   'stocks/fetchStocks',
   async () => {
     const response = await fetch(API);
-    const data = await response.json();
-    // console.log(data);
-    // const newdata = data.map((item) => ({ ...item, reserved: false }));
+    const dataold = await response.json();
+    const data = dataold.map((item) => ({ ...item, views: 0 }));
     return data;
   },
 );
+
+const incr = (num) => num + 1;
 
 const dataSlice = createSlice({
   name: 'stocks',
@@ -20,7 +21,19 @@ const dataSlice = createSlice({
     error: null,
   },
 
-  reducers: {},
+  reducers: {
+    update: (state, action) => ({
+      ...state,
+      stocks: [
+        ...state.stocks.map((item) => (
+          (item.name !== action.payload) ? item : {
+            ...item,
+            views: incr(item.views),
+          }
+        )),
+      ],
+    }),
+  },
 
   extraReducers: (builder) => {
     // Add reducers for additional action types here, and handle loading state as needed
@@ -41,5 +54,6 @@ const dataSlice = createSlice({
       }));
   },
 });
-
+export { incr };
+export const { update } = dataSlice.actions;
 export default dataSlice;

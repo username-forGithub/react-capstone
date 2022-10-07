@@ -1,9 +1,8 @@
-/* eslint-disable */
 import React, { useEffect } from 'react';
 // import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { fetchStocks } from '../redux/slices/dataSlice';
+import { fetchStocks, update } from '../redux/slices/dataSlice';
 import Navbar from '../components/Navbar';
 import Subnav from '../components/Subnav';
 import image from '../assets/share.png';
@@ -16,9 +15,12 @@ function Listing() {
     if (!fetchedAllStocks.length) {
       dispatch(fetchStocks());
     }
-  }, [dispatch]);
+  }, []);
 
-  const handleDetails = (id) => navigate(`/details/${id}`);
+  const handleDetails = (id) => {
+    navigate(`/details/${id}`);
+    dispatch(update(id));
+  };
   const [search, setSearch] = useSearchParams();
   return (
     <div className="wrapper">
