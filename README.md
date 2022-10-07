@@ -1,7 +1,7 @@
 # React capstone project - Metrics webapp
 
 ## Preview
-![Screenshot_1](https://user-images.githubusercontent.com/104260002/192083664-8c54600f-ea7e-4cd7-9488-4c20d450bd79.jpg)
+![Screenshot_1](https://user-images.githubusercontent.com/104260002/194499476-5c46c45a-d259-4b17-9149-0c48e483662f.jpg)
 
 ## Built With (Linter)
 - React
