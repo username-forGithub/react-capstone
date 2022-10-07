@@ -1,4 +1,5 @@
-import React, { useLayoutEffect } from 'react';
+/* eslint-disable */
+import React, { useEffect } from 'react';
 // import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, useSearchParams } from 'react-router-dom';
@@ -11,11 +12,11 @@ function Listing() {
   const navigate = useNavigate();
   const fetchedAllStocks = useSelector((state) => state.allData.stocks);
   const dispatch = useDispatch();
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!fetchedAllStocks.length) {
       dispatch(fetchStocks());
     }
-  }, []);
+  }, [dispatch]);
 
   const handleDetails = (id) => navigate(`/details/${id}`);
   const [search, setSearch] = useSearchParams();
