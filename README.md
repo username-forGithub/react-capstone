@@ -24,7 +24,6 @@ The following applications are required to be installed for the project to run!
 
 ## App Deployment
 - Live demo: [click here](https://username-forgithub.github.io/react-capstone/)
-- Representation: [click here](https://www.loom.com/share/13b541d103b04e198575bbc5068e1394)
 
 ## Author
 👤 **Bakhtiyor Yusubaliyev**
